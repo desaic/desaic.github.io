@@ -1,0 +1,208 @@
+:root {
+            --text-color: #333;
+            --background-color: #f8f8f8;
+            --accent-color: #097bc7;
+            --card-background: #ffffff;
+            --border-color: #eee;
+            --shadow-color: rgba(0, 0, 0, 0.05);
+        }
+
+        /* Dark mode preferences */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --text-color: #e0e0e0;
+                --background-color: #1a1a1a;
+                --accent-color: #8ab4f8;
+                --card-background: #2a2a2a;
+                --border-color: #333;
+                --shadow-color: rgba(0, 0, 0, 0.2);
+            }
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            display: flex; /* Use flexbox for centering */
+            justify-content: center;
+            align-items: flex-start; /* Align content to the top */
+            min-height: 100vh; /* Full viewport height */
+            padding: 20px; /* Add some padding around the container */
+            box-sizing: border-box; /* Include padding in element's total width and height */
+        }
+
+        .container {
+            width: 100%;
+            background-color: var(--card-background);
+            border-radius: 12px; /* Rounded corners for the main card */
+            box-shadow: 0 4px 20px var(--shadow-color); /* Subtle shadow */
+            padding: 40px;
+            box-sizing: border-box;
+        }
+
+        header {
+            display: flex; /* Arrange image and text side-by-side */
+            align-items: center; /* Vertically align items in the center */
+            text-align: left; /* Align text within the header content to the left */
+            margin-bottom: 40px; /* Space below the header */
+            gap: 20px; /* Space between image and text */
+        }
+
+        .profile-img {
+            width: 100px; /* Smaller size */
+            height: 100px; /* Smaller size */
+            border-radius: 50%; /* Circular image */
+            object-fit: cover; /* Ensure image covers the area */
+            border: 4px solid var(--accent-color); /* Accent color border */
+            box-shadow: 0 2px 10px var(--shadow-color); /* Shadow for image */
+            flex-shrink: 0; /* Prevent shrinking on small screens */
+        }
+
+        .header-content {
+            flex-grow: 1; /* Allow content to take available space */
+        }
+
+        header h1 {
+            font-size: 2.5em; /* Slightly smaller for better fit */
+            margin-top: 0; /* Remove default top margin */
+            margin-bottom: 5px; /* Reduce space below h1 */
+            color: var(--text-color);
+            font-weight: 600;
+        }
+
+        header p {
+            font-size: 1em; /* Slightly smaller for better fit */
+            margin-bottom: 0; /* Remove default bottom margin */
+            color: #666; /* Slightly lighter for subtitle */
+        }
+
+        .section {
+            margin-bottom: 40px;
+            text-align: left; /* Align text within sections to the left */
+        }
+
+        .section h2 {
+            font-size: 2em;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--border-color); /* Underline effect */
+            padding-bottom: 10px;
+            text-align: left
+        }
+
+        .section ul {
+            list-style: none; /* Remove default list styling */
+            padding: 0;
+            margin: 0;
+        }
+
+        .section li {
+            background-color: var(--background-color);
+            padding: 15px;
+            border-radius: 8px; /* Rounded corners for list items */
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Smooth hover effects */
+            text-align: left;
+            display: grid; /* Use CSS Grid for a clean layout */
+            grid-template-columns: 90px 1fr; /* Responsive columns */
+            gap: 2px; /* Spacing between grid items */
+            justify-content: center;
+        }
+
+        .section li:hover {
+            transform: translateY(-5px); /* Lift effect on hover */
+            box-shadow: 0 6px 15px var(--shadow-color); /* Enhanced shadow on hover */
+        }
+
+        .section a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .section a:hover {
+            text-decoration: underline;
+        }
+
+        /* --- New styles for Publication section --- */
+        .publications-list {
+            display: flex;
+            flex-direction: row; /* Stack publication items vertically */
+            gap: 25px; /* Space between individual publication rows */
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .publication-item {
+            flex-direction: row; /* Stack image above text within the item */
+            flex:0 1 100%;
+            gap: 15px; /* Space between image and text within the item */
+            background-color: var(--background-color);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 2px 10px var(--shadow-color);
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            text-align: center; /* Center text within the item */
+        }
+
+        .publication-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px var(--shadow-color);
+        }
+
+        .publication-teaser {
+            width: 80px; /* Small image size */
+            height: 80px;
+            border-radius: 8px;
+            object-fit: cover;
+            flex-shrink: 0; /* Prevent shrinking */
+        }
+
+        .publication-details {
+            text-align: left; /* Ensure details text is centered */
+        }
+
+        .publication-details h3 {
+            margin-top: 5px;
+            margin-bottom: 5px;
+            font-size: 1.1em;
+            color: var(--text-color);
+        }
+
+        .publication-details p {
+            font-size: 0.9em;
+            color: #888;
+            margin-bottom: 10px;
+        }
+
+        .publication-details a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .publication-details a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #888;
+            text-align: center;
+        }
+
+        footer a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
